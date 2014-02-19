@@ -5,7 +5,6 @@ Bundle-SymbolicName: com.eclipsesource.restfuse.example.service
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: EclipseSource
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy
 Import-Package: javax.ws.rs;version="1.1.1",
  javax.ws.rs.core;version="1.1.1"
 Service-Component: OSGI-INF/SampleService.xml

@@ -10,3 +10,4 @@ Import-Package: com.eclipsesource.restfuse;version="1.1.0",
 Require-Bundle: org.junit;bundle-version="4.8.2",
  com.eclipsesource.restfuse.example.service;bundle-version="1.0.0"
 Service-Component: OSGI-INF/SampleServiceConsumer.xml
+Bundle-ActivationPolicy: lazy

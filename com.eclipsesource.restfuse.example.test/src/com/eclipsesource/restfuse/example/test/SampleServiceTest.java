@@ -4,7 +4,9 @@ import static com.eclipsesource.restfuse.example.test.AllTests.BASE_URL;
 import static junit.framework.Assert.assertEquals;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.runner.RunWith;
 
@@ -28,7 +30,13 @@ public class SampleServiceTest {
 	private SampleService service;
 
 	private static CountDownLatch dependencyLatch = new CountDownLatch(1);
-	
+
+	@Before
+	public void dependencyCheck() throws InterruptedException {
+		// Wait for OSGi dependencies
+		dependencyLatch.await(10, TimeUnit.SECONDS);
+	}
+
 	public synchronized void setQuote(SampleService service) {
 		this.service = service;
 		dependencyLatch.countDown();
